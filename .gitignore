@@ -1,3 +1,3 @@
-/src/img/*
-!/src/img/odie.jpg
-!/src/img/sedona-sunset.jpg
+/public/src/img/*
+!/public/src/img/odie.jpg
+!/public/src/img/sedona-sunset.jpg
