@@ -1,6 +1,6 @@
-var VALID_OPTIONS = ['targetSelector', 'deleteInterval', 'addInterval', 'waitBeforeDelete', 'waitBeforeAdd'];
+var VALID_OPTIONS = ['targetSelector', 'backspaceInterval', 'addCharInterval', 'waitBeforeDelete', 'waitBeforeAdd'];
 
-function TypingWidget (options) {
+function AutoTyper (options) {
     // start at the first string in the array
     this.currentIndex = 0;
     // process options object if passed and set any valid options
@@ -15,19 +15,19 @@ function TypingWidget (options) {
     return this;
 }
 
-TypingWidget.prototype = {
+AutoTyper.prototype = {
     targetSelector: '#typing-widget-target',
-    deleteInterval: 50,
-    addInterval: 50,
+    backspaceInterval: 50,
+    addCharInterval: 50,
     waitBeforeDelete: 5000,
     waitBeforeAdd: 1000,
     logError: function (string) {
-        console.error('[TypingWidget] ' + string);
+        console.error('[AutoTyper] ' + string);
     },
     init: function () {
         // find the target element and attach the strings passed in dataset to the instance
         this.targetElement = document.querySelector(this.targetSelector);
-        this.stringsToType = JSON.parse(this.targetElement.dataset.typingWidgetText);
+        this.stringsToType = this.targetElement.dataset.autoTyperText.split(',');
 
         if (!this.stringsToType || !Array.isArray(this.stringsToType) || !this.stringsToType.length) {
             this.logError('Target element must have a "data-typing-widget-text" attribute containing an array of strings')
@@ -49,7 +49,7 @@ TypingWidget.prototype = {
               that.currentIndex = ++that.currentIndex >= that.stringsToType.length ? 0 : that.currentIndex;
               setTimeout(that.removeWidgetText.bind(that), that.waitBeforeDelete);
             }
-        }, that.addInterval);
+        }, that.addCharInterval);
     },
     removeWidgetText: function () {
         var that = this,
@@ -60,6 +60,6 @@ TypingWidget.prototype = {
             clearInterval(intervalId);
             setTimeout(that.addWidgetText.bind(that), that.waitBeforeAdd);
           }
-      }, that.deleteInterval)
+      }, that.backspaceInterval)
     }
 }

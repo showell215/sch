@@ -8,39 +8,39 @@
     <meta name='geo.country' content='US'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
     <meta name='author' content='Steven Howell'>
-    <!-- <link rel='icon' href='favicon.ico'> -->
     <link rel='stylesheet' href='vendor/css/normalize.css'>
     <link rel='stylesheet' href='src/index.css'>
-    <!-- <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> -->
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <script type='text/javascript' src='vendor/js/smoothscroll.js'></script>
-    <script type='text/javascript' src='src/scripts/typing-widget.js'></script>
+    <script type='text/javascript' src='src/scripts/auto-typer.js'></script>
     <script type='text/javascript' src='src/scripts/index.js'></script>
   </head>
   <body>
     <nav class='sitenav'>
-      <div class='nav-header padding-20'>
-        <h2>Steven Howell</h2>
-        <h3>Web Developer</h3>
-      </div>
-      <div class='nav-menu'>
+      <div class='nav-menu hidden collapsed'>
+          <div class='nav-header padding-20'>
+              <h2>Steven Howell</h2>
+              <h3>Web Developer</h3>
+          </div>
         <ul>
-          <li class='nav-item focused'><a href='#introduction'><span class='nav-text-item'>INTRODUCTION</span></a></li>
+          <li class='nav-item'><a href='#introduction'><span class='nav-text-item'>INTRODUCTION</span></a></li>
           <li class='nav-item'><a href='#skills'><span class='nav-text-item'>SKILLS</span></a></li>
           <li class='nav-item'><a href='#experience'><span class='nav-text-item'>EXPERIENCE</span></a></li>
           <li class='nav-item'><a href='#education'><span class='nav-text-item'>EDUCATION</span></a></li>
           <li class='nav-item'><a href='#contact'><span class='nav-text-item'>CONTACT</span></a></li>
           <li class='nav-item'><a href='#resume'><span class='nav-text-item'>RESUME</span></a></li>
         </ul>
+        </div>
+        <div class="show-hide"></div>
     </nav>
     <div class='main-content'>
         <header class='header-image-wrapper'>
             <h1 class='header-image-text'>
-                <span>Hello. I'm Steven. I'm</span>
+                <span>Hello. I'm Steven. </span>
                 <span id='typing-widget-target'
-                    data-typing-widget-text='[" a full-stack developer at IBM.", " interested in doing work that has a meaningful impact on people.", " a language learner.", " a traveller.", " a drummer.", " a tennis player.", " an aspiring dog whisperer."]'>
+                    data-auto-typer-text="I'm a full-stack developer at IBM.,I'm interested in doing work that has a meaningful impact on people.,I'm a language learner.,I'm a traveller.,I'm a drummer.,I'm a tennis player.,I'm an aspiring dog whisperer.">
                 </span>
-                <span class="cursor"></span>
+                <span class=cursor></span>
             </h1>
             <!-- <img src='src/img/sedona-sunset.jpg' alt='swimming in cenote' style='width: 100%'> -->
         </header>
@@ -58,27 +58,64 @@
       <h2 class='section-title'>SKILLS</h2>
       <div class='content-wrapper'>
           <h3>Daily-use tools and technologies:</h3>
-          <ul>
-            <li>Javascript</li>
-            <li>AngularJS</li>
-            <li>Node.js</li>
-            <li>Sass</li>
-            <li>Git</li>
-            <li>Github</li>
-            <li>IBM Cloud</li>
-            <li>Travis CI</li>
-            <li>Gulp</li>
-            <li>Nginx</li>
+          <ul class=tool-list>
+            <li class="tool-item">
+                <img src="src/img/logos/javascript.png" alt="Javascript" class="tool-logo">
+            </li>
+            <li class="tool-item">
+                <img src="src/img/logos/angular.png" alt="AngularJS" class="tool-logo">
+            </li>
+            <li class="tool-item">
+                <img src="src/img/logos/sass.png" alt="Sass" class="tool-logo">
+            </li>
+            <li class="tool-item">
+                <img src="src/img/logos/html5.png" alt="HTML5" class="tool-logo">
+            </li>
+            <li class="tool-item">
+                <img src="src/img/logos/nodejs.png" alt="Node.js" class="tool-logo">
+            </li>
+            <li class="tool-item">
+                <img src="src/img/logos/git.png" alt="Git" class="tool-logo">
+            </li>
+            <li class="tool-item">
+                <img src="src/img/logos/github.png" alt="Github" class="tool-logo">
+            </li>
+            <li class="tool-item">
+                <img src="src/img/logos/travis-ci.png" alt="Travis CI" class="tool-logo">
+            </li>
+            <li class="tool-item">
+                <img src="src/img/logos/gulp.png" alt="Gulp" class="tool-logo">
+            </li>
+            <li class="tool-item">
+                <img src="src/img/logos/nginx.png" alt="Nginx" class="tool-logo">
+            </li>
+            <li class="tool-item">
+                <img src="src/img/logos/ibm-cloud.webp" alt="IBM Cloud" class="tool-logo">
+            </li>
           </ul>
-          <h3>Other tools and technolgies I know:</h3>
-          <ul>
-            <li>React</li>
-            <li>Vue.js</li>
-            <li>Python</li>
-            <li>Java</li>
-            <li>Webpack</li>
-            <li>Docker</li>
-            <li>Heroku</li>
+          <h3>Other tools and technologies I have experience with:</h3>
+          <ul class=tool-list>
+            <li class="tool-item">
+                <img src="src/img/logos/react.png" alt="React" class="tool-logo">
+            </li>
+            <li class="tool-item">
+                <img src="src/img/logos/vuejs.png" alt="Vue.js" class="tool-logo">
+            </li>
+            <li class="tool-item">
+                <img src="src/img/logos/python.png" alt="Python" class="tool-logo">
+            </li>
+            <li class="tool-item">
+                <img src="src/img/logos/java.png" alt="Java" class="tool-logo">
+            </li>
+            <li class="tool-item">
+                <img src="src/img/logos/webpack.png" alt="Webpack" class="tool-logo">
+            </li>
+            <li class="tool-item">
+                <img src="src/img/logos/docker.png" alt="Docker" class="tool-logo">
+            </li>
+            <li class="tool-item">
+                <img src="src/img/logos/heroku.png" alt="Heroku" class="tool-logo">
+            </li>
           </ul>
       </div>
   </section>

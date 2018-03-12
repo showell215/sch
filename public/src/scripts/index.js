@@ -1,7 +1,7 @@
 'use strict';
 
 var currentlyFocusedNavElement = null,
-    contentSections, typingWidget;
+    contentSections, autoTyper;
 
 function setNavFocusOnScroll () {
     var elementInView = null;
@@ -36,16 +36,34 @@ function setFocusClassOnNav (newFocusedNavElement) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    var navItems = document.querySelectorAll('.nav-item');
+    var navMenu = document.querySelector('.nav-menu'),
+        navItems = navMenu.querySelectorAll('.nav-item'),
+        showHideNav = document.querySelector('.show-hide');
     contentSections = document.querySelectorAll('.content-section');
-    // currentlyFocusedNavElement = document.querySelector('a[href="#introduction"]').parentElement;
+
+    showHideNav.addEventListener('click', function () {
+        // [].slice.call(navMenu.children).forEach(function (element) {
+        //     element.classList.toggle('hidden');
+        // })
+        if (navMenu.classList.contains('hidden')) {
+            navMenu.classList.remove('collapsed'); //TODO check on support here
+            setTimeout(function () {
+                navMenu.classList.remove('hidden'); //TODO check on support here
+            }, 200);
+        } else {
+            navMenu.classList.add('hidden'); //TODO check on support here
+            setTimeout(function () {
+                navMenu.classList.add('collapsed'); //TODO check on support here
+            }, 200);
+        }
+    });
 
     [].slice.call(navItems).forEach(function (navElement) {
         navElement.addEventListener('click', scrollToSection);
     });
     
-    typingWidget = new TypingWidget();
-    setTimeout(typingWidget.init.bind(typingWidget), 2000);
+    autoTyper = new AutoTyper();
+    setTimeout(autoTyper.init.bind(autoTyper), 2000);
     
     window.addEventListener('scroll', setNavFocusOnScroll);
 });
