@@ -42,18 +42,21 @@ document.addEventListener('DOMContentLoaded', function () {
     contentSections = document.querySelectorAll('.content-section');
 
     showHideNav.addEventListener('click', function () {
-        // [].slice.call(navMenu.children).forEach(function (element) {
-        //     element.classList.toggle('hidden');
-        // })
-        if (navMenu.classList.contains('hidden')) {
-            navMenu.classList.remove('collapsed'); //TODO check on support here
+        if (navMenu.classList.contains('transparent')) {
+            navMenu.classList.remove('hidden')
             setTimeout(function () {
-                navMenu.classList.remove('hidden'); //TODO check on support here
+                navMenu.classList.remove('collapsed'); //TODO check on support here
+                setTimeout(function () {
+                    navMenu.classList.remove('transparent'); //TODO check on support here
+                }, 20);
             }, 200);
         } else {
-            navMenu.classList.add('hidden'); //TODO check on support here
+            navMenu.classList.add('transparent'); //TODO check on support here
             setTimeout(function () {
                 navMenu.classList.add('collapsed'); //TODO check on support here
+                setTimeout(function () {
+                    navMenu.classList.add('hidden'); //TODO check on support here
+                }, 400);
             }, 200);
         }
     });

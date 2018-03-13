@@ -213,8 +213,11 @@ h1, h2, h4 {
     .collapsed {
         height: 0 !important;
     }
-    .hidden {
+    .transparent {
         opacity: 0 !important;
+    }
+    .hidden {
+        display: none;
     }
 
     .sitenav {
