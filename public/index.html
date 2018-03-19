@@ -11,24 +11,31 @@
     <link rel='stylesheet' href='vendor/css/normalize.css'>
     <link rel='stylesheet' href='src/index.css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-    <script type='text/javascript' src='vendor/js/smoothscroll.js'></script>
-    <script type='text/javascript' src='src/scripts/auto-typer.js'></script>
-    <script type='text/javascript' src='src/scripts/index.js'></script>
   </head>
   <body>
+    <div class="top-banner transparent collapsed"></div>
     <nav class='sitenav'>
-      <div class='nav-menu hidden collapsed transparent'>
-          <div class='nav-header padding-20'>
-              <h2>Steven Howell</h2>
-              <h3>Web Developer</h3>
-          </div>
-        <ul>
+      <div class="nav-menu hidden collapsed transparent">
+        <header class="nav-header">
+              <div class="padding-20 center-align">
+                <h2>Steven Howell</h2>
+                <h3>Web Developer</h3>
+            </div>
+            <div class="padding-20 center-align">
+              <h2 class="regular-weight">Let's connect.</h2>
+              <ul class="contact-list">
+                <textarea id="email-text" style="opacity: 0; position: absolute; left: -9999px">stevenclarkhowell@gmail.com</textarea>
+                <li class="contact-item"><button class="email copy-to-clipboard" data-text-element="#email-text"><a href="mailto:stevenclarkhowell@gmail.com"><img class="contact-img" src="src/img/contact/email.png" alt="Email"></button></a></li>
+                <li class="contact-item"><button><a target="_blank" href="https://linkedin.com/in/steven-clark-howell/"><img class="contact-img" src="src/img/contact/linkedin.png" alt="LinkedIn"></a></button></li>
+                <li class="contact-item"><button><a target="_blank" href="https://github.com/showell215"><img class="contact-img" src="src/img/contact/github.png" alt="Github"></a></button></li>
+              </ul>
+            </div>
+        </header>
+        <ul class="nav-list">
           <li class='nav-item'><a href='#introduction'><span class='nav-text-item'>INTRODUCTION</span></a></li>
           <li class='nav-item'><a href='#skills'><span class='nav-text-item'>SKILLS</span></a></li>
           <li class='nav-item'><a href='#experience'><span class='nav-text-item'>EXPERIENCE</span></a></li>
           <li class='nav-item'><a href='#education'><span class='nav-text-item'>EDUCATION</span></a></li>
-          <li class='nav-item'><a href='#contact'><span class='nav-text-item'>CONTACT</span></a></li>
-          <li class='nav-item'><a href='#resume'><span class='nav-text-item'>RESUME</span></a></li>
         </ul>
         </div>
         <div class="show-hide"></div>
@@ -38,7 +45,7 @@
             <h1 class='header-image-text'>
                 <span>Hello. I'm Steven. </span>
                 <span id='typing-widget-target'
-                    data-auto-typer-text="I'm a full-stack developer at IBM.,I'm interested in doing work that has a meaningful impact on people.,I'm a language learner.,I'm a traveller.,I'm a drummer.,I'm a tennis player.,I'm an aspiring dog whisperer.">
+                    data-auto-typer-text="I'm a full-stack developer at IBM.,I'm interested in doing work that has a meaningful impact on people.,I'm a language learner.,I'm a stickler for detail.,I'm a traveller.,I'm a full-stack developer at IBM.,I'm a drummer.,I'm a tennis player.,I'm an aspiring dog whisperer.">
                 </span>
                 <span class=cursor></span>
             </h1>
@@ -47,11 +54,11 @@
       <section id='introduction' class='content-section'>
         <h2 class='section-title'>INTRODUCTION</h2>
         <div class='content-wrapper'>
-            <div class='profile-img-wrapper' style='float: left; border-radius: 50%;'>
-                <img src='src/img/odie.jpg' alt='profile image' style='width: 300px; border-radius: 50%;'>
+            <div class='profile-img-wrapper'>
+                <img src='src/img/odie.jpg' alt='profile image'>
             </div>
             <p>I'm Steven Howell, and I'm a web developer in Durham, North Carolina, USA.</p>
-            <p>I currently work in a full-stack role in IBM's Digital Marketplace, where I do a mix of client-side coding, server-side coding, and managing and maintaining our CI/CD pipeline and other tools.</p>
+            <p>I currently work in a full-stack role in IBM's Digital Marketplace, where I do a mix of client-side coding, server-side coding, and managing and maintaining our CI/CD pipeline tools.</p>
         </div>
   </section>
   <section id='skills' class='content-section'>
@@ -132,19 +139,18 @@
         <div>UNC Chapel Hill - Romance Languages and International Studies</div>
     </div>
   </section>
-  <section id='contact' class='content-section'>
+  <!-- <section id='contact' class='content-section'>
   <h2 class='section-title'>CONTACT</h2>
     <div class='content-wrapper'>
         <p>Email - stevenclarkhowell@gmail.com</p>
         <p>Github - showell215</p>
         <p>LinkedIn - showell</p>
     </div>
-  </section>
-  <section id='resume' class='content-section'>
-    <h2 class='section-title'>RESUME</h2>
-    <div class='content-wrapper'>Content</div>
-  </section>
+  </section> -->
     </div>
-    <footer>Copyright me duh</footer>
+    <footer>Copyright Steven Howell, ® 2018</footer>
+    <script type='text/javascript' src='vendor/js/smoothscroll.js'></script>
+    <script type='text/javascript' src='src/scripts/auto-typer.js'></script>
+    <script type='text/javascript' src='src/scripts/index.js'></script>
   </body>
 </html>

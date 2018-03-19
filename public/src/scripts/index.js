@@ -1,8 +1,17 @@
 'use strict';
 
 var currentlyFocusedNavElement = null,
-    contentSections, autoTyper;
+    contentSections, autoTyper, topBannerElement;
 
+function triggerTopBanner (text) {
+  topBannerElement.innerText = text;
+  topBannerElement.classList.remove('transparent');
+  topBannerElement.classList.remove('collapsed');
+  setTimeout(function () {
+    topBannerElement.classList.add('transparent');
+    topBannerElement.classList.add('collapsed');
+}, 5000);
+}
 function setNavFocusOnScroll () {
     var elementInView = null;
     [].slice.call(contentSections).forEach(function (contentSection) {
@@ -38,8 +47,11 @@ function setFocusClassOnNav (newFocusedNavElement) {
 document.addEventListener('DOMContentLoaded', function () {
     var navMenu = document.querySelector('.nav-menu'),
         navItems = navMenu.querySelectorAll('.nav-item'),
+        copyToClipboardItems = document.querySelectorAll('.copy-to-clipboard'),
         showHideNav = document.querySelector('.show-hide');
+
     contentSections = document.querySelectorAll('.content-section');
+    topBannerElement = document.querySelector('.top-banner');
 
     showHideNav.addEventListener('click', function () {
         if (navMenu.classList.contains('transparent')) {
@@ -60,7 +72,20 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 200);
         }
     });
+    
+    [].slice.call(copyToClipboardItems).forEach(function (copyToClipboardElement) {
+        copyToClipboardElement.addEventListener('click', function (e) {
+            var textElementToCopy = document.querySelector(this.dataset.textElement);
+            if (textElementToCopy) {
+                textElementToCopy.select();
+            }
 
+            if (document.execCommand('copy')) {
+                e.preventDefault();
+                triggerTopBanner("\"stevenclarkhowell@gmail.com\" was copied to the clipboard.", topBannerElement);
+            }
+        })
+    });
     [].slice.call(navItems).forEach(function (navElement) {
         navElement.addEventListener('click', scrollToSection);
     });
