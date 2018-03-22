@@ -58,7 +58,6 @@ footer {
 
 .nav-menu {
     opacity: 1;
-    height: 420px;
     transition: opacity .4s ease-in-out, height .5s ease-in-out;
     /* transition: TODO: need to ensure text is not present until height has transitioned */
 }
@@ -95,6 +94,7 @@ footer {
 }
 .nav-item {
   padding: 10px 20px;
+  min-width: 120px;
 }
 .nav-item a {
   text-decoration: none;
@@ -258,7 +258,7 @@ footer {
     opacity: 0 !important;
 }
 .top-banner.hidden {
-    display: none;
+    display: none !important;
 }
 .top-banner {
   max-height: 150px;
@@ -270,18 +270,17 @@ footer {
   position: fixed;
   z-index: 2;
   display: flex;
-align-items: center;
-flex-direction: column;
-justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 .nav-header {
     background: #FFDE81;
     border-bottom: 1px gray solid;
 }
 @media only screen and (max-width: 939px) {
-  
+      
     .sitenav {
-        /* position: relative; */
         z-index: 1;
         width: 100%;
         height: auto;
@@ -292,11 +291,26 @@ justify-content: center;
         margin-top: 10px;
         display: inline-block;
     }
-    .nav-menu {
-        /* TODO set this to default  */
+    .show-hide:hover {
+        cursor: pointer;
     }
+    
+    .nav-menu.collapsed {
+        height: 0 !important;
+        max-height: 0 !important;
+    }
+    .nav-menu.transparent {
+        opacity: 0 !important;
+    }
+    .nav-menu.hidden {
+        display: none !important;
+    }
+    
     .nav-menu .nav-list {
-        display: inline-block;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .main-content {
@@ -312,9 +326,4 @@ justify-content: center;
         margin-right: 0;
         margin-bottom: 20px;
     }
-    /* .header-image-text {
-        font-size: 3rem;
-        line-height: 3.5rem;
-        
-    } */
 }

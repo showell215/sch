@@ -5,11 +5,17 @@ var currentlyFocusedNavElement = null,
 
 function triggerTopBanner (text) {
   topBannerElement.innerText = text;
-  topBannerElement.classList.remove('transparent');
-  topBannerElement.classList.remove('collapsed');
+  topBannerElement.classList.remove('hidden');
+  setTimeout(function () {
+      topBannerElement.classList.remove('transparent');
+      topBannerElement.classList.remove('collapsed');
+  }, 200);
   setTimeout(function () {
     topBannerElement.classList.add('transparent');
     topBannerElement.classList.add('collapsed');
+    setTimeout(function () {
+        topBannerElement.classList.add('hidden');
+    }, 200);
 }, 5000);
 }
 function setNavFocusOnScroll () {
