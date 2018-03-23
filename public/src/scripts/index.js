@@ -1,7 +1,7 @@
 'use strict';
 
 var currentlyFocusedNavElement = null,
-    contentSections, autoTyper, topBannerElement;
+    contentSections, autoTyper, topBannerElement, showHideNav;
 
 function triggerTopBanner (text) {
   topBannerElement.innerText = text;
@@ -30,14 +30,22 @@ function setNavFocusOnScroll () {
     }
 }
 
-function scrollToSection (event) {
-    event.preventDefault();
+function scrollToSection (that) {
     window.scroll(
         {
-            top: document.querySelector(this.querySelector('a').getAttribute('href')).offsetTop,
+            top: document.querySelector(that.querySelector('a').getAttribute('href')).offsetTop,
             behavior: 'smooth'
         }
     );
+}
+
+function handleNavSectionClick (event) {
+    event.preventDefault();
+    scrollToSection(this);
+    setTimeout(function () {
+        showHideNav.click();
+    }, 1000);
+    
 }
 
 function setFocusClassOnNav (newFocusedNavElement) {
@@ -53,9 +61,9 @@ function setFocusClassOnNav (newFocusedNavElement) {
 document.addEventListener('DOMContentLoaded', function () {
     var navMenu = document.querySelector('.nav-menu'),
         navItems = navMenu.querySelectorAll('.nav-item'),
-        copyToClipboardItems = document.querySelectorAll('.copy-to-clipboard'),
-        showHideNav = document.querySelector('.show-hide');
+        copyToClipboardItems = document.querySelectorAll('.copy-to-clipboard');
 
+    showHideNav = document.querySelector('.show-hide');
     contentSections = document.querySelectorAll('.content-section');
     topBannerElement = document.querySelector('.top-banner');
 
@@ -93,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     });
     [].slice.call(navItems).forEach(function (navElement) {
-        navElement.addEventListener('click', scrollToSection);
+        navElement.addEventListener('click', handleNavSectionClick);
     });
     
     autoTyper = new AutoTyper();
