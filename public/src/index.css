@@ -319,8 +319,6 @@ footer {
     }
     .focused.nav-item::after {
         width: 100%;
-        left: 50%;
-        transform: translateX(-50%);    
     }
     .profile-img-wrapper {
         margin-right: 0;
