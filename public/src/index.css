@@ -1,12 +1,14 @@
+/* @import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700'); */
+
 html {
-    font-size: 16px;
+    font-size: 20px;
 }
 body {
     font-family: 'Roboto', sans-serif;
 }
 
 p {
-    padding: 0 0 15px;
+    padding: 0 0 1rem;
 }
 * {
   padding: 0;
@@ -17,7 +19,7 @@ ul {
   list-style: none;
 }
 h1 {
-    line-height: 3rem;
+    line-height: 2.25rem;
 }
 
 h1, h2, h4 {
@@ -47,6 +49,15 @@ footer {
 
 .regular-weight {
     font-weight: 200;
+}
+.normal-size {
+    font-size: 1rem;
+}
+.italic {
+    font-style: italic;
+}
+.margin-top-1 {
+    margin-top: 20px;
 }
 .sitenav {
   position: fixed;
@@ -83,7 +94,7 @@ footer {
 }
 
 .section-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     padding: 0 20px;
     box-shadow: 5px 1px 5px 0px rgba(0,0,0,0.16), 0px 0px 10px 0 rgba(0,0,0,0.12);
     /* background-color: #F7882F; /*orange*/
@@ -145,9 +156,31 @@ footer {
     padding: 20px 40px;
     background-color: #e8e6e6;
     color: #0a0a0a;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     min-height: 100%;
+    display: inline-block;
     box-shadow: 0 0 5px 3px rgba(0,0,0,0.16), 0px 0px 10px 0 rgba(0,0,0,0.12);
+}
+
+.corner-ribbon {
+  width: 200px;
+  background: #F7882F;
+  position: absolute;
+  top: 25px;
+  left: -50px;
+  text-align: center;
+  line-height: 50px;
+  letter-spacing: 1px;
+  color: #f0f0f0;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.corner-ribbon.top-right{
+  top: 25px;
+  right: -50px;
+  left: auto;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
 
 #typing-widget-target {
@@ -194,7 +227,7 @@ footer {
 }
 .cursor {
     animation: cursor-blink steps(1) 400ms infinite alternate;
-    font-size: 3rem;
+    font-size: 2.5rem;
     top : 2px;
     right: 7px;
     position: relative;
@@ -216,9 +249,8 @@ footer {
     justify-content: center;
 }
 .tool-logo {
-    max-width: 150px;
+    max-width: 300px;
     max-height: 150px;
-    /* min-height: 150px; */
     position: relative;
      top: 50%;
      transform: translateY(-50%);
@@ -227,7 +259,7 @@ footer {
 .tool-item {
     min-width: 150px;
     text-align: center;
-    margin: 1rem 1.5rem;
+    margin: 1rem 1.3rem;
     padding: 1rem;
     border-radius: 10% / 50%;
     background: white;
@@ -278,8 +310,49 @@ footer {
     background: #FFDE81;
     border-bottom: 1px gray solid;
 }
+
+.experience-card {
+    padding: 20px;
+    background: white;
+    border-radius: 20px 20px;
+    box-shadow: grey 0px 0px 1px 1px;
+    float: left;
+}
+.experience-card h3 {
+    margin-top: 20px;
+    background: #FFDE81;
+    padding: 10px 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.award {
+    background: #dcc7aa75;
+    overflow: hidden;
+    /* width: 80%; */
+    /* text-align: right; */
+    /* float: right; */
+    position: relative;
+    padding: 20px;
+    margin: 20px 10px;
+    border-radius: 10px 10px;
+    box-shadow: 0 0px 1px 1px lightgrey;
+}
+.award h4 {
+    padding-right: 20vw;;
+}
+
 @media only screen and (max-width: 939px) {
       
+    html {
+        font-size: 16px;
+    }
+    
+    .content-wrapper {
+        margin: 20px;
+        padding: 10px;
+    }
+
     .sitenav {
         z-index: 1;
         width: 100%;
