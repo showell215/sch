@@ -41,7 +41,8 @@ footer {
     position: relative;
     background: lightgray;
     text-align: center;
-    padding: 20px;
+    width: 100%;
+    padding: 20px 0;
     box-shadow: 0px -1px 5px 0px rgba(0,0,0,0.16), 0px 0px 10px 0 rgba(0,0,0,0.12);
 }
 
@@ -135,11 +136,15 @@ footer {
     color: #feffff;
   background: #6B7A8F;
   padding-left: 250px;
-  display: inline-block;
+  /* display: inline-block; */
 }
 
-.main-content section {
+.content-section {
   padding: 30px 0 0;
+}
+
+.content-section:last-of-type {
+    padding-bottom: 30px
 }
 
 .content-wrapper {
@@ -233,7 +238,7 @@ footer {
     justify-content: center;
 }
 .tool-logo {
-    max-width: 300px;
+    max-width: 100%;
     max-height: 150px;
     position: relative;
      top: 50%;
@@ -242,6 +247,7 @@ footer {
 
 .tool-item {
     min-width: 150px;
+    max-width: 300px;
     text-align: center;
     margin: 1rem 1.3rem;
     padding: 1rem;
@@ -297,6 +303,7 @@ footer {
 
 .experience-card {
     padding: 20px;
+    margin: 10px;
     background: white;
     border-radius: 20px 20px;
     box-shadow: grey 0px 0px 1px 1px;
@@ -384,6 +391,13 @@ footer {
     .profile-img-wrapper {
         margin-bottom: 20px;
     }
+    
+    .tool-item {
+        min-width: 0;
+        max-width: 80px;
+        margin: .7rem;
+    }
+    
 }
 
 @media only screen and (max-width: 560px) {
