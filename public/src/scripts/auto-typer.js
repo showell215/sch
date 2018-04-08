@@ -1,4 +1,4 @@
-var VALID_OPTIONS = ['targetSelector', 'backspaceInterval', 'addCharInterval', 'waitBeforeDelete', 'waitBeforeAdd'];
+var VALID_OPTIONS = Object.freeze(['targetSelector', 'deleteInterval', 'addInterval', 'deleteDelay', 'addDelay']);
 
 function AutoTyper (options) {
     // start at the first string in the array
@@ -17,10 +17,10 @@ function AutoTyper (options) {
 
 AutoTyper.prototype = {
     targetSelector: '#typing-widget-target',
-    backspaceInterval: 50,
-    addCharInterval: 50,
-    waitBeforeDelete: 5000,
-    waitBeforeAdd: 1000,
+    deleteInterval: 50,
+    addInterval: 50,
+    deleteDelay: 5000,
+    addDelay: 1000,
     logError: function (string) {
         console.error('[AutoTyper] ' + string);
     },
@@ -47,9 +47,9 @@ AutoTyper.prototype = {
             } else {
               clearInterval(intervalId);
               that.currentIndex = ++that.currentIndex >= that.stringsToType.length ? 0 : that.currentIndex;
-              setTimeout(that.removeWidgetText.bind(that), that.waitBeforeDelete);
+              setTimeout(that.removeWidgetText.bind(that), that.deleteDelay);
             }
-        }, that.addCharInterval);
+        }, that.addInterval);
     },
     removeWidgetText: function () {
         var that = this,
@@ -58,8 +58,8 @@ AutoTyper.prototype = {
             that.targetElement.textContent = that.targetElement.textContent.slice(0, -1);
           } else {
             clearInterval(intervalId);
-            setTimeout(that.addWidgetText.bind(that), that.waitBeforeAdd);
+            setTimeout(that.addWidgetText.bind(that), that.addDelay);
           }
-      }, that.backspaceInterval)
+      }, that.deleteInterval)
     }
 }
