@@ -1,13 +1,14 @@
 var VALID_OPTIONS = Object.freeze(['targetSelector', 'deleteInterval', 'addInterval', 'deleteDelay', 'addDelay']);
 
 function AutoTyper (options) {
+    var that = this;
     // start at the first string in the array
     this.currentIndex = 0;
     // process options object if passed and set any valid options
     if (options && typeof options === 'object' && !Array.isArray(options)) {
         VALID_OPTIONS.forEach(function (validOptionKey) {
             if (options[validOptionKey]) {
-                this.validOptionKey = options[validOptionKey];
+                that[validOptionKey] = options[validOptionKey];
             }
         });
     }
@@ -47,6 +48,7 @@ AutoTyper.prototype = {
             } else {
               clearInterval(intervalId);
               that.currentIndex = ++that.currentIndex >= that.stringsToType.length ? 0 : that.currentIndex;
+              console.log("delete delay: " + that.deleteDelay);
               setTimeout(that.removeWidgetText.bind(that), that.deleteDelay);
             }
         }, that.addInterval);
