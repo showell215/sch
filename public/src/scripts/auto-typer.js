@@ -19,7 +19,7 @@ AutoTyper.prototype = {
     targetSelector: '#typing-widget-target',
     backspaceInterval: 50,
     addCharInterval: 50,
-    waitBeforeDelete: 5000,
+    waitBeforeDelete: 3500,
     waitBeforeAdd: 1000,
     logError: function (string) {
         console.error('[AutoTyper] ' + string);
