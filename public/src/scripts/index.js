@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
         navElement.addEventListener('click', handleNavSectionClick);
     });
     
-    autoTyper = new AutoTyper();
+    autoTyper = new AutoTyper({waitBeforeDelete: 3500});
     setTimeout(autoTyper.init.bind(autoTyper), 2000);
     
     window.addEventListener('scroll', setNavFocusOnScroll);
