@@ -51,6 +51,10 @@ footer {
     box-shadow: 0px -1px 5px 0px rgba(0, 0, 0, 0.16), 0px 0px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
+.true-list {
+    list-style: circle;
+    padding: 1rem 2rem;
+}
 .regular-weight {
     font-weight: 200;
 }
@@ -360,9 +364,12 @@ footer {
 }
 
 .award h4 {
-    padding-right: 20vw;
-    ;
+    padding-right: 25vw;
 }
+.award p {
+    padding-right: 10vw;
+}
+
 
 #introduction .content-wrapper {
     display: inline-block;
