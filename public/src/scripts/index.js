@@ -1,7 +1,7 @@
 'use strict';
 
 var currentlyFocusedNavElement = null,
-    contentSections, autoTyper, topBannerElement, showHideNav;
+    contentSections, autoTyper, topBannerElement, showHideNav, navMenu;
 
 function triggerTopBanner (text) {
   topBannerElement.innerText = text;
@@ -42,9 +42,6 @@ function scrollToSection (that) {
 function handleNavSectionClick (event) {
     event.preventDefault();
     scrollToSection(this);
-    setTimeout(function () {
-        showHideNav.click();
-    }, 1000);
     
 }
 
@@ -58,9 +55,41 @@ function setFocusClassOnNav (newFocusedNavElement) {
     }
 }
 
+function closeMobileNav () {
+    navMenu.classList.add('transparent'); //TODO check on support here
+    setTimeout(function () {
+        navMenu.classList.add('collapsed'); //TODO check on support here
+        setTimeout(function () {
+            navMenu.classList.add('hidden'); //TODO check on support here
+        }, 400);
+    }, 200);
+}
+
+function openMobileNav () {
+    navMenu.classList.remove('hidden')
+    setTimeout(function () {
+        navMenu.classList.remove('collapsed'); //TODO check on support here
+        setTimeout(function () {
+            navMenu.classList.remove('transparent'); //TODO check on support here
+        }, 20);
+    }, 200);
+}
+
 document.addEventListener('DOMContentLoaded', function () {
-    var navMenu = document.querySelector('.nav-menu'),
-        navItems = navMenu.querySelectorAll('.nav-item'),
+    // set timer to close mobile nav menu after scroll completes
+    var timer = null;
+    window.addEventListener('scroll', function () {
+        if (timer !== null) {
+            clearTimeout(timer);        
+        }
+        timer = setTimeout(function () {
+            closeMobileNav();
+        }, 750);
+    });
+
+    navMenu = document.querySelector('.nav-menu');
+
+    var navItems = navMenu.querySelectorAll('.nav-item'),
         copyToClipboardItems = document.querySelectorAll('.copy-to-clipboard');
 
     showHideNav = document.querySelector('.show-hide');
@@ -69,21 +98,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     showHideNav.addEventListener('click', function () {
         if (navMenu.classList.contains('transparent')) {
-            navMenu.classList.remove('hidden')
-            setTimeout(function () {
-                navMenu.classList.remove('collapsed'); //TODO check on support here
-                setTimeout(function () {
-                    navMenu.classList.remove('transparent'); //TODO check on support here
-                }, 20);
-            }, 200);
+            openMobileNav();
         } else {
-            navMenu.classList.add('transparent'); //TODO check on support here
-            setTimeout(function () {
-                navMenu.classList.add('collapsed'); //TODO check on support here
-                setTimeout(function () {
-                    navMenu.classList.add('hidden'); //TODO check on support here
-                }, 400);
-            }, 200);
+            closeMobileNav();
         }
     });
     
