@@ -21,7 +21,7 @@ function triggerTopBanner (text) {
 function setNavFocusOnScroll () {
     var elementInView = null;
     [].slice.call(contentSections).forEach(function (contentSection) {
-        if (window.scrollY >= contentSection.offsetTop) {
+        if (window.scrollY >= (contentSection.offsetTop - window.innerHeight + 40)) {
             elementInView = contentSection;
         }
     });

@@ -328,6 +328,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     padding: 0 40px;
+    width: calc(100% - 80px);
 }
 
 .nav-header {
