@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var navItems = navMenu.querySelectorAll('.nav-item'),
         copyToClipboardItems = document.querySelectorAll('.copy-to-clipboard');
 
-    showHideNav = document.querySelector('.show-hide');
+    showHideNav = document.querySelector('.show-hide-container');
     contentSections = document.querySelectorAll('.content-section');
     topBannerElement = document.querySelector('.top-banner');
 

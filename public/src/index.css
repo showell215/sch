@@ -393,7 +393,7 @@ footer {
         width: 100%;
         height: auto;
         text-align: center;
-        padding-bottom: 40px;
+        /* padding-bottom: 40px; */
     }
     .show-hide {
         margin-top: 10px;
@@ -431,6 +431,10 @@ footer {
         min-width: 0;
         max-width: 80px;
         margin: .7rem;
+    }
+    .show-hide-container {
+        padding-bottom: 40px;
+        cursor: pointer;
     }
 }
 
