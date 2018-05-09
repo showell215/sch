@@ -38,6 +38,7 @@
                 <li class='nav-item'><a href='#introduction'><span class='nav-text-item'>INTRODUCTION</span></a></li>
                 <li class='nav-item'><a href='#skills'><span class='nav-text-item'>SKILLS</span></a></li>
                 <li class='nav-item'><a href='#experience'><span class='nav-text-item'>EXPERIENCE</span></a></li>
+                <li class='nav-item'><a href='#projects'><span class='nav-text-item'>PROJECTS</span></a></li>
                 <li class='nav-item'><a href='#education'><span class='nav-text-item'>EDUCATION</span></a></li>
             </ul>
         </div>
@@ -47,17 +48,16 @@
         <header class='header-image-wrapper'>
             <h1 class='header-image-text'>
                 <span>Hello. I'm Steven. </span>
-                <span id='typing-widget-target'
+                <span id='auto-typer-target'
                     data-auto-typer-text="I'm a full-stack developer.,I'm interested in doing work that has a meaningful impact on people.,I'm a language learner.,I'm a stickler for detail.,I'm a traveller.,I'm a full-stack developer.,I'm a drummer.,I'm a tennis player.,I'm an aspiring dog whisperer.">
                 </span>
-                <span class=cursor></span>
             </h1>
         </header>
         <section id='introduction' class='content-section'>
             <h2 class='section-title'>INTRODUCTION</h2>
             <div class='content-wrapper'>
                 <div class='profile-img-wrapper'>
-                    <img src='src/img/odie.jpg' alt='profile image'>
+                    <img src='src/img/profile.png' alt='profile image'>
                 </div>
                 <p>I'm Steven Howell, and I'm a web developer in Durham, North Carolina, USA.</p>
                 <p>I currently work in a full-stack role in IBM's Digital Marketplace, where I do a mix of client-side coding, server-side coding, and managing and maintaining our CI/CD pipeline tools.</p>
@@ -160,6 +160,27 @@
             <p>I have a diverse set of past work experiences have made me an effective communicator and adaptable team player who thrives on new challenges and learning opportunities. To learn more about my professional experience, see my <a target="_blank" href="https://linkedin.com/in/steven-clark-howell/">LinkedIn profile</a>.</p>
         </div>
     </div>
+  </section>
+  <section id="projects" class="content-section">
+      <h2 class="section-title">PROJECTS</h2>
+      <div class='content-wrapper'>
+          <div class="experience-card">
+              <h3 class="regular-weight">What's that character called?</h3>
+              <p class="italic margin-top-1">Input any Unicode character to learn it's name! Uses the Unicode database as the source for character names, and maps character codes to their name in English.</p>
+              <a href="http://whatsthatcharactercalled.com" target="_blank"><img style="max-width: 100%" src="src/img/whatsthatcharactercalled.png" alt="What's that character called webiste"></a>
+          </div>
+          <div class="experience-card margin-top-1">
+              <h3 class="regular-weight">Auto Typer</h3>
+              <p class="italic margin-top-1">A drop-in Javascript widget that mimics typing on a keyboard. Pass it one or more strings, and it will type them out, one time or in a loop.</p>
+              <a style="text-decoration: none; color: initial" href="https://showell215.github.io/auto-typer/" target="_blank">
+                  <div class="award">
+                          <span id="auto-typer-target-2"
+                              data-auto-typer-text="This is the Auto Typer widget.,It can be configured to type things.,Check it out!">
+                          </span>
+                  </div>
+              </a>
+          </div>
+      </div>
   </section>
   <section id='education' class='content-section'>
     <h2 class='section-title'>EDUCATION</h2>

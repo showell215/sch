@@ -1,7 +1,7 @@
 'use strict';
 
 var currentlyFocusedNavElement = null,
-    contentSections, autoTyper, topBannerElement, showHideNav, navMenu;
+    contentSections, autoTyper, autoTyperDemo, topBannerElement, showHideNav, navMenu;
 
 function triggerTopBanner (text) {
   topBannerElement.innerText = text;
@@ -123,6 +123,8 @@ document.addEventListener('DOMContentLoaded', function () {
     
     autoTyper = new AutoTyper({deleteDelay: 2500});
     setTimeout(autoTyper.init.bind(autoTyper), 2000);
+    autoTyperDemo = new AutoTyper({targetSelector: "#auto-typer-target-2"});
+    setTimeout(autoTyperDemo.init.bind(autoTyperDemo), 2000);
     
     window.addEventListener('scroll', setNavFocusOnScroll);
 });
