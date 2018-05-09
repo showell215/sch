@@ -452,4 +452,7 @@ footer {
         /* width: 100%; */
         margin: 20px;
     }
+    .corner-ribbon {
+        line-height: 30px;;
+    }
 }
