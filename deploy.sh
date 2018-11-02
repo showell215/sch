@@ -2,6 +2,7 @@
 
 . build.sh
 cp static.json dist
+git add static.json
 git add --force dist
 git commit -m deployment
-git subtree push -f --prefix dist heroku master
+git subtree push --prefix dist heroku master
