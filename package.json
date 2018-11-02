@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "build": ". build.sh",
-    "deploy": ". deploy.sh"
+    "deployPrep": ". deployPrep.sh"
   },
   "repository": {
     "type": "git",

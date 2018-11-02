@@ -1,0 +1,15 @@
+env:
+  global:
+    - secure: "u/y8JrHJDJB67zXQuL/3R6pxQJxLZPc/oAIky0pa6LAhuJSWNeeVsDS84Yl9li1Ok2XdZHPanoSWkbJAfNmdk4KxhPSaLx6e/aRgB1m0kCMN/aqK7xZ6RpZr3gqFBfrXYA0tLzCWU9e8kZG8Svk2dQe1/W+BF+/I8MOiTSqwlh5UeToRq90uc8DQPYvxtAdjzNgP7T1wDdQlxAICb8xTquH1Cxxfntxr10Hri1MSIoc/4bkHkgP+17GviCkVU39QXL5FBX/k7FZRvZOGeinXTBJR01M1agSc1YWUe9qzBTMR/vpspXofHNbnFELyRnyMWpmvjzkiA4/3QIny7zVeJ0sVmyz7P0So3S0Ikz25cUHtYAdchtLru8UBAj2hJwG4iJyr1U2V7L8sLv7xBVqFm/Ixl4a9S0/7CjxU1Mtsouw20Pus4sqitR8n7vunL+CBrTCPLY116uXP/YXCAY6/mgDSTo21pH/NqEa05C0dzg6rrB8uhi6CGfvdiuwjqgqIDx6+H6psReQbmJjl4slSVG6Kc2zZ7KqCK8XRLHOXke9bKslOslenIG+VqQ1WvwQXFZ4PDSfmxQf7orUGoH59XomWP2KEl2G/yJOGdTvc2s3bNGOXltJd/RPrM2LgpXiimSAskUcPA4evkDBxNkoJBJdOXfkt4fyhcIul5tVseYI="
+before_install:
+  - npm install -g npm@latest
+install:
+  npm install
+script:
+  - npm run build
+before_deploy:
+  - npm run deployPrep
+deploy:
+  provider: heroku
+  api_key: $HEROKU_API_KEY
+  app: floating-bastion-37662
