@@ -2,7 +2,10 @@
 
 . build.sh
 cp static.json dist
+sed -i '' 's/dist/#dist/' \.gitignore
 git add static.json
-git add --force dist
+git add --force dist/
 git commit -m deployment
-git subtree push --prefix dist heroku master
+# git subtree push -f --prefix dist heroku master
+git push heroku `git subtree split --prefix dist master`:master --force
+sed -i '' 's/#dist/dist/' \.gitignore
