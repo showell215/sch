@@ -3,7 +3,6 @@
 . build.sh
 cp static.json dist
 sed -i '' 's/dist/#dist/' \.gitignore
-git add static.json
 git add --force dist/
 git commit -m deployment
 # git subtree push -f --prefix dist heroku master
