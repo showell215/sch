@@ -1,18 +1,17 @@
 env:
   global:
-    - secure: mib2T+vgAKA2F8YqFw/XONxtxIJeDUNkwiFiJ0kOvcoxppjOA6G07ANQTvRvWigOR1+T6KaOzf87CQ86zRIvqfP1YA6D989TUq/OAvkCd2M6FZF0d2wVdy7zIYueF5KLqDe1OZbsxS196UiWbM0Ko4M480Ycm4Mia2UwhOLpkmTXIMDS8u/PWuH3AIGZ6QmD8z4L5DVyT3+OWjZXHREtvbEc2Izv5UhCrKAfS9+KWZEZbvuf3Q2rw7F5MV5aln/8migVqJaXIWcFu/cBl2or1UE//Zz7rHa5CtUPo5rhn3PLoNtXVUwus9BlBx9iyB2x5sZnPMbRS3jfxoxAwrzlg9gnKCxj7w+SbbkzXDwiq+pbArI/2yhfed6QqoNGH47jIr91T1nhQVVVNyqH+hhoDefOCrYx2U4/6hBHE2faIb4KsD1m5VzYweR98XZTn78CL+QWwfUtOF1K/UIYu67b2T1j4eN4kz8F7iCWL4nGlkG8AEiwfsdO+YuVC5dXAGPVzlRp1yv1PjuSOTAk7yrLhkUODK7UuMZuxx51Hptzw7x36HdiF/CdK3jsqgZFE8OoauZwz/uNZWvhP8Hi5vhOYRqPCYpAIeZp0uLSAa9Yi/K5Bl+KNRz9hhNTzg9giCoD1cUUc4fsD6jFIEnv4V7QalrTsD8JmMMOuE3Nh339wK4=
+  - secure: YHGdaX1KqXujyoA3Z+FL4IVgT5wzWESdD3nG2nSauZYt12Hx5cklAMaRZjB2JCkjgzDbHamat2muzLwxNOfHPpAhKyUilqXYqpJe8oRJgsKmY9MrmdgNcGYSV/6ExmZUesJ0D69RSeZjJz8hSD9v49TWeClbDosOSqc4FOoxEPUvizwW0KyPjwSEW0AWr3EbN194aY0WIFkE7e0A13vGZdPGnbRcDyr3EmOoLM37lGN4u+c7SUr9YLIGv1dYoz3gWvTVQE1m+Tb2qLZZX/tbtdLDFJkB4qz+PdiLlDtHhFAdQffCPZjFfYUgMxf7sXc0qfZF/PVsonlqHNOsf3XEBcZjthgMAvu8klwV6v2ROCB3d+iNTGXQmBbDpCTj3HgvNao/ADxgTskBYh17dBRr6+JD3vDag3Bsg/hJcVg28oc8JWCrmJCgCdBRLIOUnQSQaxi2TJNIG3J2DlZen3Y/Xp7kD8ycQl3iEmxjpzHrYgkAtZgWkyNYN/zMPo1RcM9LZ9Z2PyhwUIxrU3dl1SOQturp4+CID0k9pajvUt6ydDpJqw8hmvsxaqcVQA4t4DbD30vadEw8KNQLpNLsBTd1vFA/SGmpU0JT7TSkYaysHrB4fnY6OvTs0m1lEL66y8X3uJFVFMpFwXZTvf8jEDOeBLVETudtJI3+HZvk8KqrPQk=
 before_install:
-  - npm install -g npm@latest
-install:
-  npm install
+- npm install -g npm@latest
+install: npm install
 before_script:
-  - chmod +x build.sh
-  - chmod +x deployPrep.sh
+- chmod +x build.sh
+- chmod +x deployPrep.sh
 script:
-  - npm run build
+- npm run build
 before_deploy:
-  - npm run deployPrep
+- npm run deployPrep
 deploy:
   provider: heroku
-  api_key: $HEROKU_API_KEY
+  api_key: "$HEROKU_API_KEY"
   app: floating-bastion-37662
