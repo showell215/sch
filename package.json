@@ -4,8 +4,8 @@
   "description": "",
   "main": "",
   "scripts": {
-    "build": ". build.sh",
-    "deployPrep": ". deployPrep.sh"
+    "build": "./build.sh",
+    "deployPrep": "./deployPrep.sh"
   },
   "repository": {
     "type": "git",
