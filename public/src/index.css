@@ -55,6 +55,16 @@ footer {
     list-style: circle;
     padding: 1rem 2rem;
 }
+
+.checkmark-list.true-list {
+    list-style: none;
+}
+.checkmark-list li:before {
+    content: '✓';
+    color: green;
+    margin-left: -5px;
+    margin-right: 10px;
+}
 .regular-weight {
     font-weight: 200;
 }

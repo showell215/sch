@@ -127,4 +127,9 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(autoTyperDemo.init.bind(autoTyperDemo), 2000);
     
     window.addEventListener('scroll', setNavFocusOnScroll);
+
+    var year = new Date().getFullYear();
+    if (year > 2018) {
+        document.querySelector('#present-year').innerText = ' - ' + year;
+    }
 });
