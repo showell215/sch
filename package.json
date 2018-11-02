@@ -1,0 +1,20 @@
+{
+  "name": "sch-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "build": ". build.sh",
+    "deploy": ". deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/showell215/sch.git"
+  },
+  "author": "Steven Howell",
+  "license": "none",
+  "dependencies": {},
+  "devDependencies": {
+    "uglify-js": "^3.4.9"
+  }
+}
