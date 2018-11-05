@@ -18,6 +18,7 @@
     "eslint": "^5.8.0",
     "htmlhint": "^0.10.1",
     "stylelint": "^9.7.1",
+    "stylelint-config-standard": "^18.2.0",
     "uglify-js": "^3.4.9"
   }
 }
