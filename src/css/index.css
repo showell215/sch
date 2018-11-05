@@ -60,12 +60,14 @@ footer {
 
 .checkmark-list.true-list {
   list-style: none;
+  margin-left: 10px;
 }
 
 .checkmark-list li::before {
   content: '✓';
   color: green;
-  margin-left: -5px;
+  padding-left: 10px;
+  margin-left: -40px;
   margin-right: 10px;
 }
 
@@ -81,8 +83,12 @@ footer {
   font-style: italic;
 }
 
-.margin-top-1 {
+.margin-top-20 {
   margin-top: 20px;
+}
+
+.margin-top-10 {
+  margin-top: 10px;
 }
 
 .sitenav {
