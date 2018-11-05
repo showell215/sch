@@ -4,19 +4,19 @@ var currentlyFocusedNavElement = null,
     contentSections, autoTyper, autoTyperDemo, topBannerElement, showHideNav, navMenu;
 
 function triggerTopBanner (text) {
-  topBannerElement.innerText = text;
-  topBannerElement.classList.remove('hidden');
-  setTimeout(function () {
-      topBannerElement.classList.remove('transparent');
-      topBannerElement.classList.remove('collapsed');
-  }, 200);
-  setTimeout(function () {
-    topBannerElement.classList.add('transparent');
-    topBannerElement.classList.add('collapsed');
+    topBannerElement.innerText = text;
+    topBannerElement.classList.remove('hidden');
     setTimeout(function () {
-        topBannerElement.classList.add('hidden');
+        topBannerElement.classList.remove('transparent');
+        topBannerElement.classList.remove('collapsed');
     }, 200);
-}, 5000);
+    setTimeout(function () {
+        topBannerElement.classList.add('transparent');
+        topBannerElement.classList.add('collapsed');
+        setTimeout(function () {
+            topBannerElement.classList.add('hidden');
+        }, 200);
+    }, 5000);
 }
 function setNavFocusOnScroll () {
     var elementInView = null;
@@ -66,7 +66,7 @@ function closeMobileNav () {
 }
 
 function openMobileNav () {
-    navMenu.classList.remove('hidden')
+    navMenu.classList.remove('hidden');
     setTimeout(function () {
         navMenu.classList.remove('collapsed'); //TODO check on support here
         setTimeout(function () {
@@ -113,17 +113,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (document.execCommand('copy')) {
                 e.preventDefault();
-                triggerTopBanner("\"stevenclarkhowell@gmail.com\" was copied to the clipboard.", topBannerElement);
+                triggerTopBanner('"stevenclarkhowell@gmail.com" was copied to the clipboard.', topBannerElement);
             }
-        })
+        });
     });
     [].slice.call(navItems).forEach(function (navElement) {
         navElement.addEventListener('click', handleNavSectionClick);
     });
     
-    autoTyper = new AutoTyper({deleteDelay: 2500});
+    autoTyper = new window.AutoTyper({deleteDelay: 2500});
     setTimeout(autoTyper.init.bind(autoTyper), 2000);
-    autoTyperDemo = new AutoTyper({targetSelector: "#auto-typer-target-2"});
+    autoTyperDemo = new window.AutoTyper({targetSelector: '#auto-typer-target-2'});
     setTimeout(autoTyperDemo.init.bind(autoTyperDemo), 2000);
     
     window.addEventListener('scroll', setNavFocusOnScroll);
