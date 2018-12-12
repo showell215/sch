@@ -93,7 +93,7 @@ footer {
 
 .sitenav {
   position: fixed;
-  width: 250px;
+  width: 280px;
   background: #dcc7aa;
   height: 100%;
   box-shadow: 5px 1px 5px 0 rgba(0, 0, 0, 0.16), 0 0 10px 0 rgba(0, 0, 0, 0.12);
@@ -174,7 +174,7 @@ footer {
 .main-content {
   color: #feffff;
   background: #6b7a8f;
-  padding-left: 250px;
+  padding-left: 280px;
 
   /* display: inline-block; */
 }
@@ -316,7 +316,7 @@ footer {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  width: 210px;
+  width: 250px;
   margin: 0 auto;
 }
 
