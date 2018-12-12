@@ -3,3 +3,4 @@ nginx.conf
 mime.types
 *.log
 dist
+package-lock.json
