@@ -75,61 +75,60 @@ function openMobileNav () {
     }, 200);
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    // set timer to close mobile nav menu after scroll completes
-    var timer = null;
-    window.addEventListener('scroll', function () {
-        if (timer !== null) {
-            clearTimeout(timer);        
-        }
-        timer = setTimeout(function () {
-            closeMobileNav();
-        }, 750);
-    });
+// set timer to close mobile nav menu after scroll completes
+var timer = null;
+window.addEventListener('scroll', function () {
+    if (timer !== null) {
+        clearTimeout(timer);        
+    }
+    timer = setTimeout(function () {
+        closeMobileNav();
+    }, 750);
+});
 
-    navMenu = document.querySelector('.nav-menu');
+navMenu = document.querySelector('.nav-menu');
 
-    var navItems = navMenu.querySelectorAll('.nav-item'),
-        copyToClipboardItems = document.querySelectorAll('.copy-to-clipboard');
+var navItems = navMenu.querySelectorAll('.nav-item'),
+    copyToClipboardItems = document.querySelectorAll('.copy-to-clipboard');
 
-    showHideNav = document.querySelector('.show-hide-container');
-    contentSections = document.querySelectorAll('.content-section');
-    topBannerElement = document.querySelector('.top-banner');
+showHideNav = document.querySelector('.show-hide-container');
+contentSections = document.querySelectorAll('.content-section');
+topBannerElement = document.querySelector('.top-banner');
 
-    showHideNav.addEventListener('click', function () {
-        if (navMenu.classList.contains('transparent')) {
-            openMobileNav();
-        } else {
-            closeMobileNav();
-        }
-    });
-    
-    [].slice.call(copyToClipboardItems).forEach(function (copyToClipboardElement) {
-        copyToClipboardElement.addEventListener('click', function (e) {
-            var textElementToCopy = document.querySelector(this.dataset.textElement);
-            if (textElementToCopy) {
-                textElementToCopy.select();
-            }
-
-            if (document.execCommand('copy')) {
-                e.preventDefault();
-                triggerTopBanner('"stevenclarkhowell@gmail.com" was copied to the clipboard.', topBannerElement);
-            }
-        });
-    });
-    [].slice.call(navItems).forEach(function (navElement) {
-        navElement.addEventListener('click', handleNavSectionClick);
-    });
-    
-    autoTyper = new window.AutoTyper({deleteDelay: 2500});
-    setTimeout(autoTyper.init.bind(autoTyper), 2000);
-    autoTyperDemo = new window.AutoTyper({targetSelector: '#auto-typer-target-2'});
-    setTimeout(autoTyperDemo.init.bind(autoTyperDemo), 2000);
-    
-    window.addEventListener('scroll', setNavFocusOnScroll);
-
-    var year = new Date().getFullYear();
-    if (year > 2018) {
-        document.querySelector('#present-year').innerText = ' - ' + year;
+showHideNav.addEventListener('click', function () {
+    if (navMenu.classList.contains('transparent')) {
+        openMobileNav();
+    } else {
+        closeMobileNav();
     }
 });
+
+[].slice.call(copyToClipboardItems).forEach(function (copyToClipboardElement) {
+    copyToClipboardElement.addEventListener('click', function (e) {
+        var textElementToCopy = document.querySelector(this.dataset.textElement);
+        if (textElementToCopy) {
+            textElementToCopy.select();
+        }
+
+        if (document.execCommand('copy')) {
+            e.preventDefault();
+            triggerTopBanner('"stevenclarkhowell@gmail.com" was copied to the clipboard.', topBannerElement);
+        }
+    });
+});
+[].slice.call(navItems).forEach(function (navElement) {
+    navElement.addEventListener('click', handleNavSectionClick);
+});
+
+autoTyper = new window.AutoTyper({deleteDelay: 2500});
+setTimeout(autoTyper.init.bind(autoTyper), 2000);
+autoTyperDemo = new window.AutoTyper({targetSelector: '#auto-typer-target-2'});
+setTimeout(autoTyperDemo.init.bind(autoTyperDemo), 2000);
+
+window.addEventListener('scroll', setNavFocusOnScroll);
+
+var year = new Date().getFullYear();
+if (year > 2018) {
+    document.querySelector('#present-year').innerText = ' - ' + year;
+}
+
