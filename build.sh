@@ -20,8 +20,14 @@ fi
 
 mkdir dist
 cp index.html dist/
-uglifyjs -m -c toplevel=false,unused=false --verbose --warn ./src/scripts/*.js -o ./dist/index.min.js
-uglifyjs -m -c toplevel=false,unused=false --verbose --warn ./vendor/js/*.js -o ./dist/polyfill.min.js
 cp -r src/css dist/
-cp -r vendor/css dist/
 cp -r src/img dist/
+# simple hash on the JS file for cache busting
+[[ $TRAVIS_BUILD_NUMBER ]] && cache_hash=_$TRAVIS_BUILD_NUMBER
+index_file=index$cache_hash.min.js
+uglifyjs -m -c toplevel=false,unused=false --verbose --warn ./src/scripts/vendor/*.js ./src/scripts/*.js -o ./dist/$index_file --source-map url="$index_file.map"
+# uglifyjs -m -c toplevel=false,unused=false --verbose --warn ./src/scripts/vendor/*.js  -o ./dist/polyfill.min.js
+
+
+
+sed -i.bak 's/{{index_file}}/'"${index_file}"'/' dist/index.html && rm dist/index.html.bak
